@@ -53,7 +53,7 @@ function setPost($data)
             "body" => $post["body"]
         ]);
     }
-    echo "Загружено " . count($data) . " записей<br>";
+    echo "<h3>Загружено " . count($data) . " записей<br></h3>";
 }
 
 /**
@@ -73,7 +73,7 @@ function setComments($data)
             "body" => $post["body"]
         ]);
     }
-    echo "Загружено " . count($data) . " комментариев<br>";
+    echo "<h3>Загружено " . count($data) . " комментариев<br></h3>";
 }
 
 /**
@@ -91,7 +91,7 @@ function havePosts()
     }
 
 
-    echo "Данные уже были загружены заранее<br>";
+    echo "<h3>Данные уже были загружены ранее<br></h3>";
     return true;
 }
 
@@ -126,7 +126,7 @@ function search($query)
     $result = $stmt->fetchAll();
 
     if(!$result)
-        echo "Ничего не найдено<br>";
+        echo "<h3>Ничего не найдено<br></h3>";
     foreach ($result as $res)
     {
         $stmt = getConn()->prepare("SELECT * FROM posts WHERE id = ?");
