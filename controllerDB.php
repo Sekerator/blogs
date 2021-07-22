@@ -1,6 +1,9 @@
 <?php
 require "connect_db.php";
 
+/**
+ * Создание таблицы posts
+ */
 function createTablePosts()
 {
     $stmt = getConn()->prepare("
@@ -16,6 +19,9 @@ function createTablePosts()
 
 }
 
+/**
+ * Создание таблицы comments
+ */
 function createTableComments()
 {
     $stmt = getConn()->prepare("
@@ -31,6 +37,11 @@ function createTableComments()
     $stmt->execute();
 }
 
+/**
+ * @param $data
+ *
+ * Загрузка данных post в таблицу
+ */
 function setPost($data)
 {
     foreach ($data as $post)
@@ -45,6 +56,11 @@ function setPost($data)
     echo "Загружено " . count($data) . " записей<br>";
 }
 
+/**
+ * @param $data
+ *
+ * Загрузка данных comment в таблицу
+ */
 function setComments($data)
 {
     foreach ($data as $post)
@@ -60,6 +76,11 @@ function setComments($data)
     echo "Загружено " . count($data) . " комментариев<br>";
 }
 
+/**
+ * Проверка на существование таблицы posts
+ *
+ * @return bool
+ */
 function havePosts()
 {
     $stmt = getConn()->prepare("SELECT * FROM posts");
@@ -74,6 +95,11 @@ function havePosts()
     return true;
 }
 
+/**
+ * Проверка на существование таблицы comments
+ *
+ * @return bool
+ */
 function haveComments()
 {
     $stmt = getConn()->prepare("SELECT * FROM comments");
@@ -86,6 +112,11 @@ function haveComments()
     return true;
 }
 
+/**
+ * @param $query
+ *
+ * Поиск по комментариям
+ */
 function search($query)
 {
     $stmt = getConn()->prepare("SELECT * FROM comments WHERE body LIKE ?");

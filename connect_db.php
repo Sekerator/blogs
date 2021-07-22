@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Подключение к БД
+ *
+ * @return PDO
+ */
 function getConn()
 {
     $host = 'localhost';
