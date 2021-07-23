@@ -2,7 +2,7 @@
 <form method="post">
     <div style="display:flex; justify-content:center;">
         <input type="text" name="search" placeholder="Введите ваш запрос" style="border:1px solid #d9d9d9; border-radius: 11px 0px 0px 11px; padding: 15px; width:500px">
-        <input type="submit" value="Найти" style="border-radius: 0px 11px 11px 0px; border:1px solid #d9d9d9; background: #f0ff47; padding:10px 50px 10px 50px">
+        <input type="submit" value="Найти" style="border-radius: 0px 11px 11px 0px; border:1px solid #d9d9d9; background: #f0ff47; padding:10px 50px 10px 50px; cursor: pointer">
     </div>
 </form>
 
